@@ -1,0 +1,58 @@
+$border-color: rgb(187, 255, 255);
+
+.tech-border {
+  // hover 动画样式
+  position: relative;
+  border: 1px solid $border-color;
+  padding: 10px;
+
+  &::before,
+  &::after {
+    content: "";
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    transition: all 0.4s ease-out;
+    border-radius: 2px;
+  }
+
+  &::before {
+    top: 2px;
+    left: 2px;
+    border-top: 1px solid $border-color;
+    border-left: 1px solid $border-color;
+  }
+
+  &::after {
+    bottom: 2px;
+    right: 2px;
+    border-right: 1px solid $border-color;
+    border-bottom: 1px solid $border-color;
+    pointer-events: none;
+  }
+
+  &:hover::before,
+  &:hover::after {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+  }
+
+  // 边框样式
+  border-radius: 0 5px;
+  animation: animated-border 1.5s infinite;
+
+  // 背景样式
+  // background-color: rgba(255, 255, 255, 0.2);
+  background-color: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+
+  @keyframes animated-border {
+    0% {
+      box-shadow: 0 0 0 0 $border-color;
+    }
+    100% {
+      box-shadow: 0 0 0 6px rgba(255, 255, 255, 0);
+    }
+  }
+}

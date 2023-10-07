@@ -1,0 +1,80 @@
+$auto-width: clamp(250px, 22rem, 400px);
+$reverse-auto-width: clamp(-400px, -22rem, -250px);
+
+
+.select-page-ctn {
+  position: relative;
+  width: 100%;
+  height: calc(100vh - 50px); // header 40px + padding 10px
+
+  .center {
+    width: 100%;
+    height: 100%;
+    float: left;
+    // position: relative;
+    .title{
+      z-index: 1;
+      // 字体设置
+      font-family: 'Times New Roman', 'Microsoft YaHei';
+      font-size: 25px;
+      font-weight: bolder;
+      color: rgb(152, 243, 243);
+      position: absolute;
+      display: inline-block;
+      width: 480px;
+      left: calc(50% - 240px); // 居中
+      .button{
+        visibility: visible;
+        position: absolute;
+        background: transparent !important;
+        border-width: 0px !important;
+        color: transparent !important;
+        top: -5px;
+        right: -25px;
+        transition: color 1s ease 0s; // 过渡动画
+      }
+    }
+    // 控制button显示与否, 颜色控制
+    .title:hover .button{
+      color: white !important;
+    }
+
+    .inner {
+      height: 100%;
+      margin: 0 200px 0 $auto-width;
+      display: flex;
+      flex-direction: column;
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+
+      .top-bracket {
+        flex: 1 1 ;
+      }
+
+      .bottom {
+        flex: 0 0 25%;
+        pointer-events: auto;
+      }
+    }
+  }
+
+  .left {
+    width: $auto-width;
+    height: 100%;
+    float: left;
+  }
+
+  .footer-bar {
+    //width: $auto-width;
+    width: 200px;
+    height: 100%;
+    float: right;
+  }
+}
+
+.select-page-ctn::after {
+  content: '';
+  display: block;
+  clear: both;
+}

@@ -1,0 +1,12 @@
+.character-window-ctn {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 180px;
+    width: 45%;
+    z-index: 1;  
+    .character-parallel {
+        width: 100%;
+        height: 100%;
+    }
+}

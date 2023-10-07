@@ -1,0 +1,61 @@
+.map-select-ctn {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  width: 250px;
+
+  .title-bar {
+    float: left;
+    width: 100%;
+    height: 20px;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    .map-box-title {
+      width: 100%;
+      height: 25px;
+      margin-left: 5px;
+      color: #fff;
+      display: inline-block;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .map-box-switch {
+      display: inline-block;
+      line-height: 20px;
+      // 指针样式
+      cursor: pointer;
+    }
+  }
+  .chart-content {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+  }
+  // 图表显示/隐藏动画
+  .chart-enter {
+    opacity: 0;
+  }
+  .chart-enter-active {
+    opacity: 1;
+    transition: all 300ms;
+  }
+  .chart-enter-done {
+    opacity: 1;
+  }
+  .chart-exit {
+    opacity: 1;
+  }
+  .chart-exit-active {
+    opacity: 0;
+    transition: all 300ms;
+  }
+  .chart-exit-done {
+    opacity: 0;
+  }
+}

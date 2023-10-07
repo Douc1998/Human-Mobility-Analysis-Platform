@@ -1,0 +1,9 @@
+.common-span-style {
+  display: block;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.common-margin-bottom {
+  margin-bottom: 10px;
+}
